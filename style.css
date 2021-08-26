@@ -16,6 +16,12 @@ p {
 input {
     border: 5px dotted pink;
 }
+
+/* OR 
+label input { border: 5px dotted pink;} */
+/* OR 
+input{type="text"], input[type="email"] {border 5px dotted pink}  MULTIPLE SELECTORS */
+
 p.first {
     background: #fff;
 }
@@ -24,21 +30,63 @@ p.first {
 }
 div p {
     font-size: 30px;
+    /* OR div > p {font-size: 30px; }  */
 }
-input[type=email] {
+input[type="email"] {
     background-color: #808080;
 }
 div:nth-of-type(3) p {
     background-color: hotpink;
 }
+/* OR 
+div:nth-child(5) p { background-color: hotpink;} */
+/* 5th div or child in the sibling element and select the p and apply the style (NOTE: Has to be the right element number or it wont work. */
 div:nth-of-type(3) p:nth-of-type(2) {
     border: 7px solid rgb(255, 255, 255);
 }
+/* OR 
+div:nth-child(5) > p:last-child { border: 7px solid rgb(255, 255, 255); */
+/* NTH...YOU CAN JUST COUNT CHILDS ELEMENT. MAKE SURE THEY ON THE SAME LEVEL.  INDENTED LEVEL ARE GRANDCHILD ELEMENT */
 
 /* div:nth-of-type(3n) em:last-child {
     font-size: 25px seashell;
 } */
+div:nth-of-type(3) p em {
+    font-size: 25px;
+    color: seashell;
+}
 
-em:last-child {
-    font-size: 25px seashell;
+/* em {
+    font-size: 25px; seashell;
+} */
+
+/* BONUS */ /* BONUS */ /* BONUS */
+/* 1 */ attribute and psuedo selector
+input[type="checkbox"]:checked {
+    margin-left: 40px;
+}
+/* OR */
+/* input:checked {
+    margin-left: 40px;
+} */
+
+/* 2 */
+label {
+    text-transform: lowercase;
+}
+
+/* 3 */
+#important::first-letter {
+    color: lime;
+    font-size: 90px;
+}
+
+/* 4 */
+h1:hover {
+    color: navy;
+}
+
+/* 5 */
+a:visited {
+    color: silver;
 }
